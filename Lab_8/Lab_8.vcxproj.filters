@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\StudentFunctions">
+      <UniqueIdentifier>{7265484c-8363-43e9-9d21-ffc80d770e76}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StudentFunctions\WriteInFileStudents.c">
+      <Filter>Source Files\StudentFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentFunctions\WriteInBinFileStudents.c">
+      <Filter>Source Files\StudentFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentFunctions\ReadFromFileStudents.c">
+      <Filter>Source Files\StudentFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentFunctions\ReadFromBinFileStudents.c">
+      <Filter>Source Files\StudentFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentFunctions\RandomStudent.c">
+      <Filter>Source Files\StudentFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentFunctions\PrintStudents.c">
+      <Filter>Source Files\StudentFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentFunctions\NiceStudents.c">
+      <Filter>Source Files\StudentFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentFunctions\DelStudent.c">
+      <Filter>Source Files\StudentFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentFunctions\DelNotNiceStudents.c">
+      <Filter>Source Files\StudentFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentFunctions\AddStudent.c">
+      <Filter>Source Files\StudentFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSelection.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScanString.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileCheck.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="save.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="save.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
