@@ -52,78 +52,78 @@
 
 /*------------List of colors----------*/
 enum ConsoleColor {
-	Black = 0,
-	Blue = 1,
-	Green = 2,
-	Cyan = 3,
-	Red = 4,
-	Magenta = 5,
-	Brown = 6,
-	LightGray = 7,
-	DarkGray = 8,
-	LightBlue = 9,
-	LightGreen = 10,
-	LightCyan = 11,
-	LightRed = 12,
-	LightMagenta = 13,
-	Yellow = 14,
-	White = 15
+    Black = 0,
+    Blue = 1,
+    Green = 2,
+    Cyan = 3,
+    Red = 4,
+    Magenta = 5,
+    Brown = 6,
+    LightGray = 7,
+    DarkGray = 8,
+    LightBlue = 9,
+    LightGreen = 10,
+    LightCyan = 11,
+    LightRed = 12,
+    LightMagenta = 13,
+    Yellow = 14,
+    White = 15
 };
 /*------------------------------------*/
 
 /*---------New types for Snake--------*/
 typedef enum __ScoreMultiply {
-	SM_X1 = 1,
-	SM_X2 = 2,
-	SM_X5 = 5
+    SM_X1 = 1,
+    SM_X2 = 2,
+    SM_X5 = 5
 } ScoreMultiply;
 
 typedef enum __ScoreDelay {
-	SD_X1 = 200,
-	SD_X2 = 150,
-	SD_X5 = 100
+    SD_X1 = 200,
+    SD_X2 = 150,
+    SD_X5 = 100
 } ScoreDelay;
 
 typedef enum __SnakeLook {
-	LOOK_UP = -1,
-	LOOK_DOWN = 1,
-	LOOK_LEFT = -2,
-	LOOK_RIGHT = 2
+    LOOK_UP = -1,
+    LOOK_DOWN = 1,
+    LOOK_LEFT = -2,
+    LOOK_RIGHT = 2
 } SnakeLook;
 
 /*World's objects in memory*/
 typedef enum __WorldObjs {
 
-	/*Snake struct*/
-	SNAKE_HEAD = 8,
-	SNAKE_TAIL = 2,
+    /*Snake struct*/
+    SNAKE_HEAD = 8,
+    SNAKE_TAIL = 2,
 
-	/*World structures*/
-	WORLD_BARRIER = -1,
-	WORLD_APPLE = 1,
-	WORLD_SPACE = 0
+    /*World structures*/
+    WORLD_BARRIER = -1,
+    WORLD_APPLE = 1,
+    WORLD_SPACE = 0
 
 } WorldObjs;
 /*------------------------------------*/
 
 /*--------Typedefs and structs--------*/
 typedef struct __World {
-	WorldObjs **buf;
-	COORD Size;
+    WorldObjs **buf;
+    COORD Size;
 } WORLD;
 
 typedef struct __Snake {
-	COORD CoordsHead;
-	COORD *CoordsTail;
-	size_t Lenght;
-	SnakeLook Look;
+    COORD CoordsHead;
+    COORD *CoordsTail;
+    size_t Lenght;
+    SnakeLook Look;
 } SNAKE;
 
 typedef struct __Options {
-	COORD SaveCoords;
-	ScoreDelay Delay;
-	uint64_t Score;
-	ScoreMultiply Multiply;
+    COORD SaveCoords;
+    ScoreDelay Delay;
+    uint64_t Score;
+    ScoreMultiply Multiply;
 } OPTIONS;
 /*------------------------------------*/
 
@@ -134,7 +134,7 @@ void SnakeKB();
 void SnakeAI();
 
 /*World functions*/
-void SnakeWorldGen(); //main gen function
+void SnakeWorldGen();
 void WorldMemAlloc();
 void WorldBarrierGen();
 void FreeSpaceGen();
@@ -161,4 +161,5 @@ void clrscr();
 void gotoxy(int column, int row);
 /*------------------------------------*/
 
-#endif //HEADER_H
+#endif
+
