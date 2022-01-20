@@ -1,4 +1,11 @@
 
+*/.vs
 /.vscode
 *.exe
+
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*/Debug
+*/Release
 
