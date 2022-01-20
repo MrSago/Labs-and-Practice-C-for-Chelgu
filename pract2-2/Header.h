@@ -1,3 +1,4 @@
+
 #ifndef HEADER_H
 #define HEADER_H
 
@@ -7,9 +8,9 @@ typedef unsigned int Word;
 typedef unsigned char sign_t;
 
 typedef struct __bignum {
-	Word  *buf;
-	size_t size;
-	sign_t sign;
+    Word* buf;
+    size_t size;
+    sign_t sign;
 } BigNum;
 
 #define IN
@@ -32,9 +33,9 @@ typedef struct __bignum {
 #define TRUE (1)
 #define FALSE (0)
 
-OUT BigNum GetBigNumByStr(IN const char *str);
+OUT BigNum GetBigNumByStr(IN const char* str);
 void PrintBigNum(IN const BigNum bigNum);
-void FreeBigNum(IN BigNum *bigNum);
+void FreeBigNum(IN BigNum* bigNum);
 char CompareBigNum(IN const BigNum bigNum1, IN const BigNum bigNum2);
 
 OUT BigNum AddBigNum(IN BigNum bigNum1, IN BigNum bigNum2);
@@ -42,4 +43,5 @@ OUT BigNum SubBigNum(IN BigNum bigNum1, IN BigNum bigNum2);
 OUT BigNum MulBigNum(IN BigNum bigNum1, IN BigNum bigNum2);
 OUT BigNum DivBigNum(IN BigNum bigNum1, IN BigNum bigNum2);
 
-#endif //HEADER_H
+#endif  // HEADER_H
+
