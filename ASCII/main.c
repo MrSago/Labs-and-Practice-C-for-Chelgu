@@ -8,7 +8,6 @@ int main() {
     FILE* file;
     int i;
 
-
     printf("Full ASCII table:\n");
 
 	file = fopen(FNAME, "w");
