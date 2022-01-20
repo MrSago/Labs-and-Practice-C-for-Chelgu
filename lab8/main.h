@@ -39,11 +39,11 @@ typedef struct __student {
 typedef Student* Students;
 
 /*Other Functions*/
-char* ScanString(void);
+char* ScanString();
 errno_t FileCheck(FILE** file, const char filename[], const char mode[]);
 
 /*Menu Functions*/
-int MenuSelection(void);
+int MenuSelection();
 void AddStudent(Students Group);
 void RandomStudent(Students Group);
 void DelStudent(Students Group);

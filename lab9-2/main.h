@@ -30,9 +30,9 @@ enum ConsoleColor {
 };
 
 void MenuColors(int* color);
-int MenuSelection(void);
+int MenuSelection();
 char* RandomString(size_t str_size);
-char* ScanString(void);
+char* ScanString();
 
 void setconsolesize(int x, int y);
 void hidecursor();

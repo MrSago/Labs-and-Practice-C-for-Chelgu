@@ -1,7 +1,7 @@
 
 #include "main.h"
 
-char *ScanString(void) {
+char* ScanString() {
     size_t index = 0;
     char tmp_char = 0;
     char* tmp_str;
@@ -17,7 +17,7 @@ char *ScanString(void) {
         str[index] = tmp_char;
 
         tmp_str = (char*)realloc(str, (index + 2) * sizeof(char));
-        if (tmp_str == NULL) {
+        if (tmp_str == (char*)NULL) {
             exit(EXIT_FAILURE);
         }
 

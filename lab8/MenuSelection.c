@@ -1,7 +1,7 @@
 
 #include "main.h"
 
-int MenuSelection(void) {
+int MenuSelection() {
     errno_t err;
     int select;
     char tmp;
