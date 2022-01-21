@@ -5,43 +5,36 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define INDEX_ADD_FUNCTION 0        // Сложение
-#define INDEX_SUB_FUNCTION 1        // Вычитание
-#define INDEX_MULT_FUNCTION 2       // Умножение
-#define INDEX_DIV_FUNCTION 3        // Деление
-#define INDEX_PRINT_FUNCTION 4      // Вывод
-#define INDEX_INIT_FUNCTION 5       // Инициализация
-#define INDEX_RNG_FUNCTION 6        // Генерация случайного числа
-#define INDEX_INIT_TABLE_FUNCTION 6 // инициализация по таблице и выделение памяти
-#define INDEX_ZERO_FUNCTION 7       // обнуление
-#define INDEX_ONE_FUNCTION 8        // присваивание единицы
+#define INDEX_ADD_FUNCTION 0
+#define INDEX_SUB_FUNCTION 1
+#define INDEX_MULT_FUNCTION 2
+#define INDEX_DIV_FUNCTION 3
+#define INDEX_PRINT_FUNCTION 4
+#define INDEX_INIT_FUNCTION 5
+#define INDEX_RNG_FUNCTION 6
+#define INDEX_INIT_TABLE_FUNCTION 6
+#define INDEX_ZERO_FUNCTION 7
+#define INDEX_ONE_FUNCTION 8
 
-// обобщённая структура
 typedef struct _OperationsType OperationsType;
 
-// тип указателя на обобщённую функцию сложения, вычитания, умножения и деления
 typedef OperationsType *(*OperationProto)(OperationsType *a, OperationsType *b);
-// тип указателя на обобщённую функцию вывода
 typedef void (*OperationProtoPrint)(OperationsType *a);
 
-// Обобщенная структура
 struct _OperationsType {
-    OperationProto *vtable;  // указатель на массив указателей на функции
+    OperationProto *vtable;
 };
 
-// Матрица с коэффициентами типа INT
 typedef struct _OperationsTypeInt {
     OperationsType head;
     int value;
 } OperationsTypeInt;
 
-// Матрица с коэффициентами типа DOUBLE
 typedef struct _OperationsTypeDouble {
     OperationsType head;
     double value;
 } OperationsTypeDouble;
 
-// Полиморфная функция сложения
 OperationsType *Add(OperationsType *a, OperationsType *b) {
     if (a == NULL) return b;
 
@@ -65,7 +58,6 @@ OperationsTypeDouble *AddDouble(OperationsTypeDouble *a,
     return result;
 }
 
-// Полиморфная функция вычитания
 OperationsType *Sub(OperationsType *a, OperationsType *b) {
     return ((OperationProto)a->vtable[INDEX_SUB_FUNCTION])(a, b);
 }
@@ -87,7 +79,6 @@ OperationsTypeDouble *SubDouble(OperationsTypeDouble *a,
     return result;
 }
 
-// Полиморфная функция умножения
 OperationsType *Mult(OperationsType *a, OperationsType *b) {
     return ((OperationProto)a->vtable[INDEX_MULT_FUNCTION])(a, b);
 }
@@ -107,7 +98,6 @@ OperationsTypeDouble *MultDouble(OperationsTypeDouble *a,
     return result;
 }
 
-// Полиморфная функция деления
 OperationsType *Div(OperationsType *a, OperationsType *b) {
     return ((OperationProto)a->vtable[INDEX_DIV_FUNCTION])(a, b);
 }
@@ -132,7 +122,6 @@ OperationsTypeDouble *DivDouble(OperationsTypeDouble *a,
     return result;
 }
 
-// Полиморфная функция вывода
 void Print(OperationsType *a) {
     return ((OperationProtoPrint)a->vtable[INDEX_PRINT_FUNCTION])(a);
 }
@@ -147,7 +136,6 @@ void *PrintDouble(OperationsTypeDouble *a) {
     return;
 }
 
-// Полиморфная функция генерации случайных чисел
 void Random(OperationsType *a) {
     return ((OperationProtoPrint)a->vtable[INDEX_RNG_FUNCTION])(a);
 }
@@ -165,24 +153,20 @@ void *RandomDouble(OperationsTypeDouble *a) {
     return;
 }
 
-// Полиморфная функция инициализации
 void Init(OperationsType *a) {
     return ((OperationProtoPrint)a->vtable[INDEX_INIT_FUNCTION])(a);
 }
 
 void *InitInt(OperationsTypeInt *a) {
-    // a->value = 0;
     Random(a);
     return;
 }
 
 void *InitDouble(OperationsTypeDouble *a) {
-    // a->value = 0.0;
     Random(a);
     return;
 }
 
-// Полиморфная функция обнуления
 void Zero(OperationsType *a) {
     return ((OperationProtoPrint)a->vtable[INDEX_ZERO_FUNCTION])(a);
 }
@@ -197,7 +181,6 @@ void *ZeroDouble(OperationsTypeDouble *a) {
     return;
 }
 
-// Полиморфная функция присваивания единицы
 void One(OperationsType *a) {
     return ((OperationProtoPrint)a->vtable[INDEX_ONE_FUNCTION])(a);
 }
@@ -212,7 +195,6 @@ void *OneDouble(OperationsTypeDouble *a) {
     return;
 }
 
-// массив указателей на функции, работающих с OperationsTypeInt
 OperationProto vtableInt[] = {
     (OperationProto)AddInt,    (OperationProto)SubInt,
     (OperationProto)MultInt,   (OperationProto)DivInt,
@@ -220,17 +202,12 @@ OperationProto vtableInt[] = {
     (OperationProto)RandomInt, (OperationProto)ZeroInt,
     (OperationProto)OneInt};
 
-// массив указателей на функции, работающих с OperationsTypeDouble
 OperationProto vtableDouble[] = {
     (OperationProto)AddDouble,    (OperationProto)SubDouble,
     (OperationProto)MultDouble,   (OperationProto)DivDouble,
     (OperationProto)PrintDouble,  (OperationProto)InitDouble,
     (OperationProto)RandomDouble, (OperationProto)ZeroDouble,
     (OperationProto)OneDouble};
-
-//-----------------------------
-//------Матричные функции------
-//-----------------------------
 
 void InitMatrix(OperationsType ***matrix, size_t rows, size_t columns) {
     size_t i, j;
@@ -350,11 +327,11 @@ void GetMinor(OperationsType ***mass, OperationsType ***minor, size_t row,
 OperationsType ***InitMem(size_t r, size_t c) {
     OperationsType ***mass =
         (OperationsType ***)malloc(r * sizeof(OperationsType **));
-
-    for (int i = 0; i < r; ++i) {
+    int i, j;
+    for (i = 0; i < r; ++i) {
         mass[i] = (OperationsType **)malloc(sizeof(OperationsType *) * c);
 
-        for (int j = 0; j < c; ++j) {
+        for (j = 0; j < c; ++j) {
             mass[i][j] = (OperationsType *)malloc(sizeof(OperationsType));
         }
     }
@@ -408,11 +385,12 @@ OperationsType *Det(OperationsType ***a, size_t rows, size_t columns) {
 OperationsType ***Invert(OperationsType ***a, size_t rows, size_t columns) {
     OperationsType ***invertedMatrix =
         (OperationsType ***)malloc(rows * sizeof(OperationsType **));
-    for (size_t i = 0; i < rows; ++i) {
+    size_t i, j, k;
+    for (i = 0; i < rows; ++i) {
         invertedMatrix[i] =
             (OperationsType **)malloc(sizeof(OperationsType *) * columns);
 
-        for (size_t j = 0; j < columns; ++j) {
+        for (j = 0; j < columns; ++j) {
             invertedMatrix[i][j] =
                 (OperationsType *)malloc(sizeof(OperationsType));
         }
@@ -421,62 +399,60 @@ OperationsType ***Invert(OperationsType ***a, size_t rows, size_t columns) {
     size_t N = rows;
     OperationsType *temp = 0;
 
-    // Левая матрица в методе Жордана-Гаусса
     OperationsType ***A =
         (OperationsType ***)malloc(rows * sizeof(OperationsType **));
-    for (size_t i = 0; i < rows; ++i) {
+    for (i = 0; i < rows; ++i) {
         A[i] = (OperationsType **)malloc(sizeof(OperationsType *) * columns);
-        for (size_t j = 0; j < columns; ++j) {
+        for (j = 0; j < columns; ++j) {
             A[i][j] = (OperationsType *)malloc(sizeof(OperationsType));
         }
     }
-    for (size_t i = 0; i < N; ++i) {
-        for (size_t j = 0; j < N; ++j) {
+    for (i = 0; i < N; ++i) {
+        for (j = 0; j < N; ++j) {
             A[i][j] = a[i][j];
         }
     }
 
-    // Правая(единичная) матрица в методе Жордана-Гаусса
     OperationsType ***B = 0;
     B = InitMem(rows, columns);
-    for (size_t i = 0; i < N; ++i) {
-        for (size_t j = 0; j < N; ++j) {
+    for (i = 0; i < N; ++i) {
+        for (j = 0; j < N; ++j) {
             B[i][j]->vtable = a[0][0]->vtable;
             Zero(B[i][j]);
             if (i == j) One(B[i][j]);
         }
     }
 
-    for (size_t k = 0; k < N; ++k) {
+    for (k = 0; k < N; ++k) {
         temp = A[k][k];
-        for (size_t j = 0; j < N; ++j) {
+        for (j = 0; j < N; ++j) {
             A[k][j] = Div(A[k][j], temp);
             B[k][j] = Div(B[k][j], temp);
         }
 
-        for (size_t i = k + 1; i < N; ++i) {
+        for (i = k + 1; i < N; ++i) {
             temp = A[i][k];
 
-            for (size_t j = 0; j < N; ++j) {
+            for (j = 0; j < N; ++j) {
                 A[i][j] = Sub(A[i][j], Mult(A[k][j], temp));
                 B[i][j] = Sub(B[i][j], Mult(B[k][j], temp));
             }
         }
     }
 
-    for (int k = N - 1; k > 0; --k) {
-        for (int i = k - 1; i >= 0; --i) {
+    for (k = N - 1; k > 0; --k) {
+        for (i = k - 1; i >= 0; --i) {
             temp = A[i][k];
 
-            for (int j = 0; j < N; ++j) {
+            for (j = 0; j < N; ++j) {
                 A[i][j] = Sub(A[i][j], Mult(A[k][j], temp));
                 B[i][j] = Sub(B[i][j], Mult(B[k][j], temp));
             }
         }
     }
 
-    for (size_t i = 0; i < N; i++) {
-        for (size_t j = 0; j < N; j++) {
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
             invertedMatrix[i][j] = B[i][j];
             invertedMatrix[i][j]->vtable = a[0][0]->vtable;
         }
@@ -487,13 +463,13 @@ OperationsType ***Invert(OperationsType ***a, size_t rows, size_t columns) {
 
 void TestInt() {
     printf("DOUBLE MATRIX TEST\n");
-    size_t i;
+    size_t i, j;
     size_t rows = 3, cols = 3;
     OperationsType ***matrixA =
         (OperationsType ***)malloc(sizeof(OperationsType **) * rows);
     for (i = 0; i < rows; ++i) {
         matrixA[i] = (OperationsType **)malloc(sizeof(OperationsType *) * cols);
-        for (int j = 0; j < cols; ++j) {
+        for (j = 0; j < cols; ++j) {
             matrixA[i][j] = (OperationsType *)malloc(sizeof(OperationsTypeInt));
             matrixA[i][j]->vtable = vtableInt;
         }
@@ -503,7 +479,7 @@ void TestInt() {
         (OperationsType ***)malloc(sizeof(OperationsType **) * rows);
     for (i = 0; i < rows; ++i) {
         matrixB[i] = (OperationsType **)malloc(sizeof(OperationsType *) * cols);
-        for (int j = 0; j < cols; ++j) {
+        for (j = 0; j < cols; ++j) {
             matrixB[i][j] = (OperationsType *)malloc(sizeof(OperationsTypeInt));
             matrixB[i][j]->vtable = vtableInt;
         }

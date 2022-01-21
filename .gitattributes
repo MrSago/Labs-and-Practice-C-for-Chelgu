@@ -5,6 +5,13 @@
 .gitattributes  text
 .gitignore      text
 
+# CMake File
+CMakeLists.txt  text
+
 # Source files
 *.c             text
+*.h             text
+
+# Other I/O files
+*.txt           text
 

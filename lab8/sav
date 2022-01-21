@@ -1,9 +1,0 @@
-all: build start
-
-STUDFUNC=.\StudentFunctions\AddStudent.c .\StudentFunctions\DelNotNiceStudents.c .\StudentFunctions\DelStudent.c .\StudentFunctions\NiceStudents.c .\StudentFunctions\PrintStudents.c .\StudentFunctions\RandomStudent.c .\StudentFunctions\ReadFromBinFileStudents.c .\StudentFunctions\ReadFromFileStudents.c .\StudentFunctions\WriteInBinFileStudents.c .\StudentFunctions\WriteInFileStudents.c
-
-build:
-	gcc -O3 -ansi -o prog.exe .\main.c .\FileCheck.c .\MenuSelection.c .\ScanString.c ${STUDFUNC}
-
-start:
-	.\prog.exe

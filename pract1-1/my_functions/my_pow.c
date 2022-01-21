@@ -1,5 +1,7 @@
 
 int my_pow(int a, const unsigned n) {
+    unsigned i;
+
     switch (n) {
         case 0:
             return 1;
@@ -10,7 +12,7 @@ int my_pow(int a, const unsigned n) {
         default: {
             const int tmp = a;
 
-            for (unsigned i = 0; i < n - 1; ++i) {
+            for (i = 0; i < n - 1; ++i) {
                 a *= tmp;
             }
 

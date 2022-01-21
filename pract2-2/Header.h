@@ -43,5 +43,5 @@ OUT BigNum SubBigNum(IN BigNum bigNum1, IN BigNum bigNum2);
 OUT BigNum MulBigNum(IN BigNum bigNum1, IN BigNum bigNum2);
 OUT BigNum DivBigNum(IN BigNum bigNum1, IN BigNum bigNum2);
 
-#endif  // HEADER_H
+#endif
 

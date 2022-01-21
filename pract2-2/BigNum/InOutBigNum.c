@@ -70,7 +70,7 @@ OUT BigNum GetBigNumByStr(IN const char* str) {
         bigNum.sign = PLUS;
     }
 
-    for (size_t i = 0 + sign; str[i] != '\0'; ++i) {
+    for (i = 0 + sign; str[i] != '\0'; ++i) {
         if ((str[i] < '0' || str[i] > '9') && (str[i] < 'a' || str[i] > 'f')) {
             return bigNum;
         }
@@ -107,7 +107,7 @@ OUT BigNum GetBigNumByStr(IN const char* str) {
 }
 
 void PrintBigNum(IN const BigNum bigNum) {
-    size_t i;
+    size_t i, k;
 
     if (bigNum.sign == MINUS) {
         putchar('-');
@@ -121,7 +121,7 @@ void PrintBigNum(IN const BigNum bigNum) {
         _i64toa_s(bigNum.buf[index], tmp, 9, 16);
 
         if ((index + 1) < bigNum.size && (len = strlen(tmp)) < 8) {
-            for (size_t k = 8 - len; k > 0; --k) {
+            for (k = 8 - len; k > 0; --k) {
                 putchar('0');
             }
         }
