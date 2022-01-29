@@ -1,12 +1,12 @@
 
-*/.vs
-/.vscode
+*.vs
+*.vscode
 /build
 *.exe
 
 *.vcxproj
 *.vcxproj.filters
 *.vcxproj.user
-*/Debug
-*/Release
+*Debug
+*Release
 
