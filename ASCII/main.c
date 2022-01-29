@@ -1,5 +1,5 @@
 
-#include <stdint.h>
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,7 +10,7 @@ int main() {
 
     printf("Full ASCII table:\n");
 
-	file = fopen(FNAME, "w");
+    file = fopen(FNAME, "w");
     if (file != (FILE*)NULL) {
         fprintf(file, "Full ASCII table:\n");
 
