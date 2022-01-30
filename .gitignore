@@ -1,12 +1,18 @@
 
 *.vs
 *.vscode
-/build
+
 *.exe
 
+./*.sln
 *.vcxproj
 *.vcxproj.filters
 *.vcxproj.user
 *Debug
 *Release
+
+/build
+/CMakeFiles
+*CMakeCache.txt
+*.cmake
 

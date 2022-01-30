@@ -5,13 +5,13 @@ project(Labs-and-Practice-C-Chelgu VERSION 2.0)
 set(CMAKE_C_STANDARD 90)
 
 function(setup_target TARGET)
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG "../${TARGET}")
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "../${TARGET}")
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_CURRENT_SOURCE_DIR}/${TARGET})
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_CURRENT_SOURCE_DIR}/${TARGET})
 
     file(GLOB_RECURSE SRC_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/${TARGET}/*.c)
 
-    add_executable(${TARGET} ${SRC_FILES} ${TXT_FILES})
+    add_executable(${TARGET} ${SRC_FILES})
 endfunction(setup_target TARGET)
 
 setup_target(ASCII)
