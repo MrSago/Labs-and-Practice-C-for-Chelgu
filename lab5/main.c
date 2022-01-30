@@ -1,3 +1,4 @@
+
 #include "main.h"
 
 int main() {
@@ -13,25 +14,21 @@ int main() {
             "3.Сгенерировать матрицу\n"
             "0.Выйти из программы\n");
 
-        switch (_getch()) {
+        switch (getchar()) {
             case '1':
-                system("cls");
                 code = ManuallyMatrix();
                 break;
 
             case '2':
-                system("cls");
                 code = FileMatrix();
                 break;
 
             case '3':
-                system("cls");
                 code = GenRndMatrix();
                 break;
 
             case '0':
-                system("cls");
-                return (SUCCESS);
+                return SUCCESS;
 
             default:
                 printf("\nОшибка! Такой опции не существует!\n");
@@ -40,9 +37,6 @@ int main() {
 
         if (code != SUCCESS && code != EFOPEN && code != EINCORMATR) {
             return my_exception(code);
-        } else {
-            system("pause");
-            system("cls");
         }
     }
 

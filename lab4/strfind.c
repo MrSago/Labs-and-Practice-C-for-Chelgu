@@ -1,5 +1,5 @@
 
-#include <stdint.h>
+#include <stddef.h>
 
 size_t strfind(char* str, char* find) {
     size_t count = 0;
