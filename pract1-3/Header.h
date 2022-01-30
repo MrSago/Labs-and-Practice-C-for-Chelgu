@@ -16,10 +16,10 @@
 #define ARG_D "0123456789"
 #define ARG_S "!\"#$%%&'()*+,-./@^"
 
-void ParseArgv(int argc, char **argv,
-               size_t *outPasswordLength, char **outAlph);
-void GenerateRandomString(char *out, size_t size, char *alph, size_t sizeAlph);
-char *GenerateRandomPassword(size_t passwordLength, char *alph);
+void ParseArgv(int argc, char** argv,
+               size_t* outPasswordLength, char** outAlph);
+void GenerateRandomString(char* out, size_t size, char* alph, size_t sizeAlph);
+char* GenerateRandomPassword(size_t passwordLength, char* alph);
 
 #endif
 

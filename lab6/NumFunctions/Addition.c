@@ -39,7 +39,7 @@ char* Addition(char* number_min, char* number_max, size_t size_min,
         ++size_max;
 
         number_res = (char*)realloc(number_res, size_max * sizeof(char));
-        if (number_res == NULL) {
+        if (number_res == (char*)NULL) {
             exit(EXIT_FAILURE);
         }
 

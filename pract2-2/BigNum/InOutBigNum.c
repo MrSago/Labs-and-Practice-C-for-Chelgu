@@ -41,7 +41,7 @@ Word StringInWord(const char* str) {
 
 OUT BigNum GetBigNumByStr(IN const char* str) {
     BigNum bigNum;
-    bigNum.buf = NULL;
+    bigNum.buf = (Word*)NULL;
     bigNum.size = 0;
     bigNum.sign = 0;
 
@@ -83,7 +83,7 @@ OUT BigNum GetBigNumByStr(IN const char* str) {
     }
 
     bigNum.buf = (Word *)malloc(bigNum.size * sizeof(Word));
-    if (bigNum.buf == NULL) {
+    if (bigNum.buf == (Word*)NULL) {
         exit(ERMALLOC);
     }
 

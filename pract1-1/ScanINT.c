@@ -7,7 +7,7 @@ int my_pow(int a, const unsigned n);
 
 int ScanINT() {
     int res = 0;
-    char *str = ScanString();
+    char* str = ScanString();
     size_t str_len = strlen(str), i;
     int sign = 0;
 

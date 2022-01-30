@@ -8,7 +8,7 @@ char* ScanString() {
     char* str;
 
     str = (char*)malloc(2 * sizeof(char));
-    if (str == NULL) {
+    if (str == (char*)NULL) {
         exit(EXIT_FAILURE);
     }
 

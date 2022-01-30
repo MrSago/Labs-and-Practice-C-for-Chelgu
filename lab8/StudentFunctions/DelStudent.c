@@ -27,17 +27,14 @@ void DelStudent(Students Group) {
 
         switch (MenuSelection()) {
             case 1:
-                system("cls");
                 DelNumber(Group);
                 return;
 
             case 2:
-                system("cls");
                 DelLastName(Group);
                 return;
 
             case 3:
-                system("cls");
                 DelInfo(Group);
                 printf("Список студентов удален!\n");
                 return;
@@ -53,7 +50,7 @@ void DelStudent(Students Group) {
 }
 
 void DelNumber(Students Group) {
-    errno_t err;
+    int err;
     size_t del_number;
     char tmp;
 
@@ -124,7 +121,7 @@ void DelInfo(Students Group) {
     }
 
     free(Group->info);
-    Group->info = NULL;
+    Group->info = (Info*)NULL;
     Group->count = 0;
 }
 
@@ -133,8 +130,8 @@ void CopyAndFreeInfo(Students Group, size_t del_index) {
 	size_t i, k;
 
     Group->count--;
-    NewInfo = (Info *)malloc(Group->count * sizeof(Info));
-    if (NewInfo == NULL) {
+    NewInfo = (Info*)malloc(Group->count * sizeof(Info));
+    if (NewInfo == (Info*)NULL) {
         exit(EXIT_FAILURE);
     }
 

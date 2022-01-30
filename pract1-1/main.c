@@ -12,17 +12,11 @@ int main() {
 
         switch (MenuSelection()) {
             case 1:
-                system("cls");
                 FunctionsExample();
-                system("pause");
-                system("cls");
                 break;
 
             case 2:
-                system("cls");
                 HexFile();
-                system("pause");
-                system("cls");
                 break;
 
             case 0:

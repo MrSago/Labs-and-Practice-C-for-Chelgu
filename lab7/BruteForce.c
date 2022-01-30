@@ -3,7 +3,7 @@
 
 void BruteForce(unsigned int result, char* string, char filename[]) {
     FILE* file = fopen(filename, "a");
-    fprintf_s(
+    fprintf(
         file,
         "Строка: %s\nРезультат выполнения функции: %d\nНачало перебора:\n",
         string, result);

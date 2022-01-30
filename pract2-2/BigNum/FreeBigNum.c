@@ -4,9 +4,9 @@
 #include "../Header.h"
 
 void FreeBigNum(IN BigNum *bigNum) {
-    if (bigNum->buf != NULL) {
+    if (bigNum->buf != (Word*)NULL) {
         free(bigNum->buf);
-        bigNum->buf = NULL;
+        bigNum->buf = (Word*)NULL;
     }
 
     bigNum->size = 0;

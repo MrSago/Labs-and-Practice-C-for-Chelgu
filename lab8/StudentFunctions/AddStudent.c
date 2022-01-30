@@ -5,18 +5,18 @@ void AddStudent(Students Group) {
     Info* NewStudent;
     size_t index;
 
-    if (Group->info == NULL || Group->count == 0) {
+    if (Group->info == (Info*)NULL || Group->count == 0) {
         Group->count = 1;
 
         NewStudent = (Info*)malloc(sizeof(Info));
-        if (NewStudent == NULL) {
+        if (NewStudent == (Info*)NULL) {
             exit(EXIT_FAILURE);
         }
     } else {
         Group->count++;
 
         NewStudent = (Info*)realloc(Group->info, Group->count * sizeof(Info));
-        if (NewStudent == NULL) {
+        if (NewStudent == (Info*)NULL) {
             exit(EXIT_FAILURE);
         }
     }

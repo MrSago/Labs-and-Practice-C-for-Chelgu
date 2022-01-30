@@ -5,7 +5,7 @@ extern void DelInfo(Students Group);
 
 void ReadFromFileStudents(Students Group) {
     Info* NewInfo;
-    errno_t err;
+    int err;
     FILE* file;
     char* filename;
     size_t i, j, count = 0;
@@ -23,7 +23,7 @@ void ReadFromFileStudents(Students Group) {
         free(filename);
     }
 
-    if (Group->info != NULL && Group->count > 0) {
+    if (Group->info != (Info*)NULL && Group->count > 0) {
         DelInfo(Group);
     }
 
@@ -79,12 +79,12 @@ void ReadFromFileStudents(Students Group) {
 
         /*Запись в FirstName*/
         NewInfo[i].FirstName = (char *)(malloc(sizeof(char)));
-        if (NewInfo[i].FirstName == NULL) {
+        if (NewInfo[i].FirstName == (char*)NULL) {
             exit(EXIT_FAILURE);
         }
 
         for (j = 0; /*empty*/; ++j) {
-            fscanf_s(file, "%c", &tmp, 1);
+            fscanf(file, "%c", &tmp);
 
             if (tmp == 10) {
                 NewInfo[i].FirstName[j] = 0;
@@ -94,7 +94,7 @@ void ReadFromFileStudents(Students Group) {
             NewInfo[i].FirstName[j] = tmp;
 
             tmp_string = realloc(NewInfo[i].FirstName, (j + 2) * sizeof(char));
-            if (tmp_string == NULL) {
+            if (tmp_string == (char*)NULL) {
                 exit(EXIT_FAILURE);
             }
 

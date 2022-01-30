@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <windows.h>
+#include <Windows.h>
 
 #define STRINGS_COUNT 50
 #define MAX_STRING_SIZE 10

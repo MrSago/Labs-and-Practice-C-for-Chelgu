@@ -1,10 +1,10 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
-#include "stdio.h"
-#include "stdlib.h"
-#include "time.h"
-#include "Windows.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <Windows.h>
 
 #define GREETINGS "Welcome to Hacker v2.0\n"
 #define STR_SIZE 300

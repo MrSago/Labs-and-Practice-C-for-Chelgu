@@ -2,7 +2,7 @@
 #include "../main.h"
 
 void WriteInBinFileStudents(Students Group) {
-    errno_t err;
+    int err;
     FILE* file;
     size_t i, strsize;
     char* filename;

@@ -2,12 +2,13 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
-#include "stdint.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "time.h"
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
 #ifdef WIN32
-    #include "windows.h"
+    #include <windows.h>
 #endif
 
 #define MARKS (2 + (uint8_t)rand() % 4)
@@ -42,7 +43,7 @@ typedef Student* Students;
 
 /*Other Functions*/
 char* ScanString();
-errno_t FileCheck(FILE** file, const char filename[], const char mode[]);
+int FileCheck(FILE** file, const char filename[], const char mode[]);
 
 /*Menu Functions*/
 int MenuSelection();

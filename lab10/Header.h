@@ -2,14 +2,14 @@
 #define HEADER_H
 
 /*---------------Includes-------------*/
-#include "stdio.h"
-#include "stdlib.h"
-#include "stdint.h"
-#include "locale.h"
-#include "time.h"
-#include "windows.h"
-#include "conio.h"
-#include "mmsystem.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <locale.h>
+#include <time.h>
+#include <windows.h>
+#include <conio.h>
+#include <mmsystem.h>
 #pragma comment (lib, "Winmm.lib")
 /*------------------------------------*/
 

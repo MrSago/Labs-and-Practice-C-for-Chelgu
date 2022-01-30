@@ -5,7 +5,7 @@ extern void DelInfo(Students Group);
 
 void ReadFromBinFileStudents(Students Group) {
     Info* NewInfo;
-    errno_t err;
+    int err;
     FILE* file;
     size_t strsize, i;
     char* filename;
@@ -23,7 +23,7 @@ void ReadFromBinFileStudents(Students Group) {
         free(filename);
     }
 
-    if (Group->info != NULL && Group->count > 0) {
+    if (Group->info != (Info*)NULL && Group->count > 0) {
         DelInfo(Group);
     }
 

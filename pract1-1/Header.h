@@ -2,6 +2,7 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+#include <limits.h>
 #include <locale.h>
 #include <stdio.h>
 #include <stdlib.h>

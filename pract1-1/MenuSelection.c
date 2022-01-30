@@ -2,7 +2,7 @@
 #include "Header.h"
 
 int MenuSelection(void) {
-    errno_t err;
+    int err;
     int select;
     char tmp;
 

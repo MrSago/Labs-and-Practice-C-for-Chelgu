@@ -2,10 +2,10 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
-#include "locale.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "time.h"
+#include <locale.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #define FILENAME_RESULT "Result.txt"
 #define FILENAME_REPORT "Report.txt"

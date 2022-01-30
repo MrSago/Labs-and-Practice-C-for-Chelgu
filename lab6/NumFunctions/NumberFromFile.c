@@ -6,11 +6,11 @@ char* NumberFromFile(char filename[], size_t* size) {
     FILE* file;
     char tmp;
     size_t size_tmp;
-    errno_t err;
+    int err;
 
     err = FileCheck(&file, filename, "r");
     if (err == EFOPEN) {
-        number = NULL;
+        number = (char*)NULL;
         *size = 0;
         return number;
     }

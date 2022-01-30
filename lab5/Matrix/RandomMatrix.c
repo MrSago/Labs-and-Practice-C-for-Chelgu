@@ -6,7 +6,7 @@
 
 retcode_t RandomMatrix(Matrix* ptrMatrix) {
     Matrix matrix;
-    errno_t err;
+    int err;
     size_t i, j, k;
     char tmp;
     *ptrMatrix = (Matrix)NULL;
@@ -19,15 +19,15 @@ retcode_t RandomMatrix(Matrix* ptrMatrix) {
 
     while (1) {
         printf("Введите размерность квадратной матрицы: ");
-        if ((err = scanf_s("%llu", &matrix->strings)) != 0 &&
+        if ((err = scanf("%llu", &matrix->strings)) != 0 &&
             matrix->strings > 0) {
             for (tmp = 0;
-                 (err = scanf_s("%c", &tmp, 1)) == EOF || tmp != '\n';
+                 (err = scanf("%c", &tmp)) == EOF || tmp != '\n';
                  /*empty*/)
                 ;
             break;
         } else {
-            for (tmp = 0; tmp != '\n'; scanf_s("%c", &tmp, 1))
+            for (tmp = 0; tmp != '\n'; scanf("%c", &tmp))
                 ;
             printf("Некорректный размер матрицы!\n\n");
             continue;

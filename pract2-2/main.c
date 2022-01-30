@@ -1,14 +1,13 @@
 
-#include <process.h>
 #include <stdio.h>
 
 #include "Header.h"
 
 int main(int argc, char** argv) {
     BigNum bigNum1 = GetBigNumByStr(argv[1]);
-    if (bigNum1.buf == NULL) exit(ERARG);
+    if (bigNum1.buf == (Word*)NULL) exit(ERARG);
     BigNum bigNum2 = GetBigNumByStr(argv[2]);
-    if (bigNum2.buf == NULL) exit(ERARG);
+    if (bigNum2.buf == (Word*)NULL) exit(ERARG);
 
     BigNum bigResult;
 

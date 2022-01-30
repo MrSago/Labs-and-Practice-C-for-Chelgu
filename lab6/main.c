@@ -14,14 +14,14 @@ int main() {
         *number2, *result, *tmp_number;
 
     number1 = NumberFromFile(FILENUM1, &size1);
-    if (number1 == NULL) {
-        printf("������ �������� �����: %s\n", FILENUM1);
+    if (number1 == (char*)NULL) {
+        printf("Error open file: %s\n", FILENUM1);
         return EFOPEN;
     }
 
     number2 = NumberFromFile(FILENUM2, &size2);
-    if (number2 == NULL) {
-        printf("������ �������� �����: %s\n", FILENUM2);
+    if (number2 == (char*)NULL) {
+        printf("Error open file: %s\n", FILENUM2);
         return EFOPEN;
     }
 

@@ -2,7 +2,7 @@
 #include "../main.h"
 
 void WriteInFileStudents(Students Group) {
-    errno_t err;
+    int err;
     FILE* file;
     char* filename;
     size_t i;

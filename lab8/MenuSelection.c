@@ -2,7 +2,7 @@
 #include "main.h"
 
 int MenuSelection() {
-    errno_t err;
+    int err;
     int select;
     char tmp;
 

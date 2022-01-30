@@ -47,7 +47,7 @@ void ParseArgv(int argc, char** argv, size_t* outPasswordLength,
                 exit(0);
             }
 
-            *outPasswordLength = _atoi64((char*)argv[i + 1]);
+            *outPasswordLength = (size_t)atoi((char*)argv[i + 1]);
             if (*outPasswordLength == 0) {
                 printf("not correct arguemnts: -m");
                 exit(0);
@@ -87,7 +87,7 @@ void ParseArgv(int argc, char** argv, size_t* outPasswordLength,
                 exit(0);
             }
 
-            minLength = _atoi64((char*)argv[i + 1]);
+            minLength = (size_t)atoi((char*)argv[i + 1]);
             if (minLength == 0) {
                 printf("not correct arguemnts: -m");
                 exit(0);
@@ -111,7 +111,7 @@ void ParseArgv(int argc, char** argv, size_t* outPasswordLength,
                 exit(0);
             }
 
-            maxLength = _atoi64((char*)argv[i + 1]);
+            maxLength = (size_t)atoi((char*)argv[i + 1]);
             if (maxLength == 0) {
                 printf("not correct arguemnts: -M");
                 exit(0);

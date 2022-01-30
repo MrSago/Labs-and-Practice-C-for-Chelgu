@@ -1,12 +1,12 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
-#include "conio.h"
-#include "stdint.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "time.h"
-#include "windows.h"
+#include <conio.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <Windows.h>
 
 #define MOVE_RANDOM (1 + (rand() % 4))
 #define MOVE_UP 1
