@@ -16,11 +16,11 @@
 #define ERR_FEW_ARG -1
 #define ERR_UNKNOWN_ARG -2
 
-errno_t GetArgv(int argc, char **argv,
-                char **fin, char **fout,
-                char **rstr, char **str);
-errno_t FileCheck(FILE **file, const char filename[], const char mode[]);
-void FileStrReplace(char *fin, char *fout, char *rstr, char *str);
+int GetArgv(int argc, char** argv,
+                char** fin, char** fout,
+                char** rstr, char** str);
+int FileCheck(FILE** file, const char filename[], const char mode[]);
+void FileStrReplace(char* fin, char* fout, char* rstr, char* str);
 
 #endif
 

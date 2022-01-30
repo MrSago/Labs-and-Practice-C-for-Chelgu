@@ -2,7 +2,7 @@
 #include "Header.h"
 
 void FileStrReplace(char* fin, char* fout, char* rstr, char* str) {
-    errno_t err;
+    int err;
     FILE* input;
     FILE* output;
     size_t rstr_size;
@@ -59,3 +59,4 @@ closefile:
     fclose(output);
     return;
 }
+

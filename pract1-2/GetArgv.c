@@ -1,7 +1,7 @@
 
 #include "Header.h"
 
-errno_t GetArgv(int argc, char** argv,
+int GetArgv(int argc, char** argv,
                 char** fin, char** fout,
                 char** rstr, char** str) {
     int i;
@@ -12,7 +12,7 @@ errno_t GetArgv(int argc, char** argv,
                 printf("unknown arguments!");
                 return ERR_UNKNOWN_ARG;
             }
-            *fin = (char *)argv[i + 1];
+            *fin = (char*)argv[i + 1];
             ++i;
             continue;
         }
@@ -22,7 +22,7 @@ errno_t GetArgv(int argc, char** argv,
                 printf("unknown arguments!");
                 return ERR_UNKNOWN_ARG;
             }
-            *fout = (char *)argv[i + 1];
+            *fout = (char*)argv[i + 1];
             ++i;
             continue;
         }
@@ -32,7 +32,7 @@ errno_t GetArgv(int argc, char** argv,
                 printf("unknown arguments!");
                 return ERR_UNKNOWN_ARG;
             }
-            *rstr = (char *)argv[i + 1];
+            *rstr = (char*)argv[i + 1];
             ++i;
             continue;
         }
@@ -42,7 +42,7 @@ errno_t GetArgv(int argc, char** argv,
                 printf("unknown arguments!");
                 return ERR_UNKNOWN_ARG;
             }
-            *str = (char *)argv[i + 1];
+            *str = (char*)argv[i + 1];
             ++i;
             continue;
         }
