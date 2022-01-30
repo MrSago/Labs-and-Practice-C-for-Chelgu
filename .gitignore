@@ -12,7 +12,4 @@
 *Release
 
 /build
-/CMakeFiles
-*CMakeCache.txt
-*.cmake
 

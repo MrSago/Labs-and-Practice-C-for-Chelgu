@@ -8,6 +8,10 @@
 # CMake File
 CMakeLists.txt  text
 
+# Build scripts
+build.sh        text
+build.bat       text
+
 # Source files
 *.c             text
 *.h             text

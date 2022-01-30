@@ -36,5 +36,6 @@ setup_target(pract1-2)
 setup_target(pract1-3)
 setup_target(pract2-1)
 setup_target(pract2-2)
+message(STATUS "pract3 already for use in Visual Studio")
 setup_target(pract4)
 
