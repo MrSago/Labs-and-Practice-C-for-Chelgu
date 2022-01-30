@@ -6,7 +6,9 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "time.h"
-#include "windows.h"
+#ifdef WIN32
+    #include "windows.h"
+#endif
 
 #define MARKS (2 + (uint8_t)rand() % 4)
 #define NICE_MARKS                                                        \

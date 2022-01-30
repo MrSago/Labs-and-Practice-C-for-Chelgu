@@ -19,7 +19,7 @@ char* Addition(char* number_min, char* number_max, size_t size_min,
                size_t size_max, size_t* size_res);
 char* Multiplication(char* number_min, char* number_max, size_t size_min,
                      size_t size_max, size_t* size_res);
-errno_t FileCheck(FILE** file, const char filename[], const char mode[]);
+int FileCheck(FILE** file, const char filename[], const char mode[]);
 
 #endif
 
