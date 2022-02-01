@@ -4,6 +4,7 @@
 # GitHub
 .gitattributes  text
 .gitignore      text
+README.md       text
 
 # CMake File
 CMakeLists.txt  text
